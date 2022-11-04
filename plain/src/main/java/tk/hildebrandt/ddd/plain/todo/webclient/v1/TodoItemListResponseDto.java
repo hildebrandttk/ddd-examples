@@ -1,4 +1,4 @@
-package tk.hildebrandt.ddd.hexagonal.adapter.active.web;
+package tk.hildebrandt.ddd.plain.todo.webclient.v1;
 
 import java.util.List;
 import java.util.Objects;

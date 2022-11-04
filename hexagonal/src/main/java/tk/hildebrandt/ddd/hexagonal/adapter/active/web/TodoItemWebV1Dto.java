@@ -3,14 +3,13 @@ package tk.hildebrandt.ddd.hexagonal.adapter.active.web;
 
 import java.util.Objects;
 
-public class TodoItemDto {
+public class TodoItemWebV1Dto {
 
    private final String todoItemId;
+   private final String description;
    private final String state;
 
-   private final String description;
-
-   TodoItemDto(String todoItemId, String state, String description) {
+   TodoItemWebV1Dto(String todoItemId, String description, String state) {
       this.todoItemId = todoItemId;
       this.state = state;
       this.description = description;
@@ -36,7 +35,7 @@ public class TodoItemDto {
       if (o == null || getClass() != o.getClass()) {
          return false;
       }
-      TodoItemDto that = (TodoItemDto) o;
+      TodoItemWebV1Dto that = (TodoItemWebV1Dto) o;
       return Objects.equals(todoItemId, that.todoItemId) && Objects.equals(state, that.state) && Objects.equals(description, that.description);
    }
 

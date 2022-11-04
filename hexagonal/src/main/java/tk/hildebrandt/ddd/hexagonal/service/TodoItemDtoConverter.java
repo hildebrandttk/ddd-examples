@@ -1,7 +1,6 @@
-package tk.hildebrandt.ddd.hexagonal.adapter.active.web;
+package tk.hildebrandt.ddd.hexagonal.service;
 
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
@@ -12,19 +11,13 @@ import tk.hildebrandt.ddd.hexagonal.domain.TodoItem;
 import tk.hildebrandt.ddd.hexagonal.domain.TodoItemId;
 
 @Component
-public class ToDoItemV1Converter {
-
-   TodoItemListResponseDto toListResponse(List<TodoItem> domainItems) {
-      return new TodoItemListResponseDto(
-         domainItems.stream()
-                    .map(this::toDto)
-                    .collect(Collectors.toList()));
+public class TodoItemDtoConverter {
+   public List<TodoItemDto> toDto(List<TodoItem> todoItems) {
+      return todoItems.stream().map(this::toDto).collect(Collectors.toList());
    }
 
    public TodoItemDto toDto(TodoItem todoItem) {
-      return new TodoItemDto(toDto(todoItem.getTodoItemId()),
-                             toDto(todoItem.getState()),
-                             toDto(todoItem.getDescription()));
+      return new TodoItemDto(toDto(todoItem.getTodoItemId()), toDto(todoItem.getDescription()), toDto(todoItem.getState()));
    }
 
    String toDto(State state) {
@@ -49,10 +42,4 @@ public class ToDoItemV1Converter {
       return description.getValue();
    }
 
-   TodoItemId toId(String todoItemId) {
-      if (todoItemId == null) {
-         return null;
-      }
-      return new TodoItemId(UUID.fromString(todoItemId));
-   }
 }

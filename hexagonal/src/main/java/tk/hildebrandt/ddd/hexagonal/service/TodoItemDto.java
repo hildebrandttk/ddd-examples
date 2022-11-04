@@ -1,16 +1,16 @@
 
-package tk.hildebrandt.ddd.plain.todo.web.v1;
+package tk.hildebrandt.ddd.hexagonal.service;
 
 import java.util.Objects;
 
 public class TodoItemDto {
 
    private final String todoItemId;
-   private final String state;
 
    private final String description;
+   private final String state;
 
-   TodoItemDto(String todoItemId, String state, String description) {
+   public TodoItemDto(String todoItemId, String description, String state) {
       this.todoItemId = todoItemId;
       this.state = state;
       this.description = description;

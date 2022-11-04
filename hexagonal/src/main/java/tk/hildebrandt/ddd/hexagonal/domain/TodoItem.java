@@ -7,14 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
-@Entity
 public class TodoItem {
-   @EmbeddedId
    private TodoItemId todoItemId;
 
-   private String description;
+   private Description description;
 
-   @Enumerated(EnumType.STRING)
    private State state;
 
    //for jpa
@@ -23,7 +20,7 @@ public class TodoItem {
 
    public TodoItem(TodoItemId todoItemId, Description description, State state) {
       this.todoItemId = todoItemId;
-      this.description = description.getValue();
+      this.description = description;
       this.state = state;
    }
 
@@ -40,7 +37,7 @@ public class TodoItem {
    }
 
    public Description getDescription() {
-      return new Description(description);
+      return description;
    }
 
    public State getState() {

@@ -1,17 +1,17 @@
-package tk.hildebrandt.ddd.plain.todo.web.v1;
+package tk.hildebrandt.ddd.hexagonal.adapter.active.web;
 
 import java.util.List;
 import java.util.Objects;
 
-public class TodoItemListResponseDto {
+public class TodoItemListResponseWebV1Dto {
 
-   private List<TodoItemDto> items;
+   private final List<TodoItemWebV1Dto> items;
 
-   TodoItemListResponseDto(List<TodoItemDto> items) {
+   TodoItemListResponseWebV1Dto(List<TodoItemWebV1Dto> items) {
       this.items = items;
    }
 
-   public List<TodoItemDto> getItems() {
+   public List<TodoItemWebV1Dto> getItems() {
       return items;
    }
 
@@ -23,7 +23,7 @@ public class TodoItemListResponseDto {
       if (o == null || getClass() != o.getClass()) {
          return false;
       }
-      TodoItemListResponseDto that = (TodoItemListResponseDto) o;
+      TodoItemListResponseWebV1Dto that = (TodoItemListResponseWebV1Dto) o;
       return Objects.equals(items, that.items);
    }
 

@@ -1,5 +1,7 @@
 package tk.hildebrandt.ddd.hexagonal.adapter.passive.db;
 
+import java.util.UUID;
+
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Component;
@@ -8,14 +10,13 @@ import tk.hildebrandt.ddd.hexagonal.domain.Description;
 import tk.hildebrandt.ddd.hexagonal.domain.State;
 import tk.hildebrandt.ddd.hexagonal.domain.TodoItem;
 import tk.hildebrandt.ddd.hexagonal.domain.TodoItemId;
-import tk.hildebrandt.ddd.hexagonal.ports.passive.TodoRepository;
 
 @Component
 public class TodoTestdataService {
 
-   private final TodoRepository todoRepository;
+   private final TodoJpaRepository todoRepository;
 
-   public TodoTestdataService(TodoRepository todoRepository) {
+   public TodoTestdataService(TodoJpaRepository todoRepository) {
       this.todoRepository = todoRepository;
    }
 
@@ -25,7 +26,13 @@ public class TodoTestdataService {
    }
 
    @Transactional
+   public TodoItem createOpenTodoItem(UUID todoItemId) {
+      TodoItemJpaEntity jpaEntity = todoRepository.save(new TodoItemJpaEntity(todoItemId, "Test", State.OPEN.name()));
+      return new TodoItem(new TodoItemId(jpaEntity.getTodoItemId()), new Description(jpaEntity.getDescription()), State.valueOf(jpaEntity.getState()));
+   }
+   @Transactional
    public TodoItem createOpenTodoItem(TodoItemId todoItemId) {
-      return todoRepository.save(new TodoItem(todoItemId, new Description("Test"), State.OPEN));
+      TodoItemJpaEntity jpaEntity = todoRepository.save(new TodoItemJpaEntity(todoItemId.getId(), "Test", State.OPEN.name()));
+      return new TodoItem(new TodoItemId(jpaEntity.getTodoItemId()), new Description(jpaEntity.getDescription()), State.valueOf(jpaEntity.getState()));
    }
 }

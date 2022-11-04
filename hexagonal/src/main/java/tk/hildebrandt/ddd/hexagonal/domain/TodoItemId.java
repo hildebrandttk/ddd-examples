@@ -3,14 +3,12 @@ package tk.hildebrandt.ddd.hexagonal.domain;
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.UUID;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-
-@Embeddable
 public class TodoItemId implements Serializable {
-   @Column(columnDefinition = "uuid")
-   private UUID id;
+   public static final Pattern UUID_PATTERN = Pattern.compile("^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$");
+   private final UUID id;
 
    public TodoItemId() {
       this(UUID.randomUUID());
@@ -18,6 +16,14 @@ public class TodoItemId implements Serializable {
 
    public TodoItemId(UUID id) {
       this.id = id;
+   }
+
+   public TodoItemId(String id) {
+      Matcher matcher = UUID_PATTERN.matcher(id);
+      if(!matcher.matches()) {
+         throw new IllegalArgumentException("id is no valid UUID");
+      }
+      this.id = UUID.fromString(id);
    }
 
    public UUID getId() {

@@ -1,4 +1,4 @@
-package tk.hildebrandt.ddd.plain.todo.web.v1;
+package tk.hildebrandt.ddd.plain.todo.webclient.v1;
 
 import java.util.Optional;
 
