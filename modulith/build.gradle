@@ -1,0 +1,42 @@
+plugins {
+   id 'application'
+   id 'org.springframework.boot' version '2.7.5' apply false
+}
+
+repositories {
+   mavenCentral()
+}
+
+dependencies {
+   implementation('org.springframework.boot:spring-boot-starter-web')
+   implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+
+   implementation('org.springframework.boot:spring-boot-starter-log4j2')
+   implementation('org.springframework.boot:spring-boot-starter-validation')
+
+   testImplementation 'org.springframework.boot:spring-boot-starter-test'
+   testImplementation 'com.tngtech.archunit:archunit-junit5:1.0.0'
+   testImplementation 'org.assertj:assertj-core:3.22.0'
+   testImplementation 'org.junit.jupiter:junit-jupiter'
+   testImplementation 'com.h2database:h2'
+
+   implementation platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
+   implementation platform('org.junit:junit-bom:5.9.1')
+   implementation platform('org.apache.logging.log4j:log4j-bom:2.19.0')
+   runtimeOnly 'org.apache.logging.log4j:log4j-slf4j2-impl'
+}
+
+configurations.all {
+   exclude group: 'ch.qos.logback'
+   exclude group: 'org.slf4j', module: 'jul-to-slf4j'
+   exclude group: 'org.apache.logging.log4j', module: 'log4j-to-slf4j'
+   exclude group: 'org.apache.logging.log4j', module: 'log4j-slf4j-impl'
+}
+
+application {
+   mainClass = 'tk.hildebrandt.ddd.plain.TodoApp'
+}
+
+tasks.named('test') {
+   useJUnitPlatform()
+}
