@@ -5,7 +5,7 @@ pluginManagement {
    }
 }
 rootProject.name = 'DDD Architecture Examples'
-include('plain')
+include('domain-based')
 include('modulith')
 include('hexagonal')
 include('onion')

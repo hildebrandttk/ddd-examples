@@ -2,7 +2,7 @@ package tk.hildebrandt.ddd.hexagonal.adapter.passive.db;
 
 import java.util.UUID;
 
-import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
 
 import org.springframework.stereotype.Component;
 

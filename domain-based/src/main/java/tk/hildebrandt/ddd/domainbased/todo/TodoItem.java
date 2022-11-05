@@ -1,4 +1,4 @@
-package tk.hildebrandt.ddd.hexagonal.domain;
+package tk.hildebrandt.ddd.domainbased.todo;
 
 import java.util.Objects;
 
@@ -7,11 +7,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 
+@Entity
 public class TodoItem {
+   @EmbeddedId
    private TodoItemId todoItemId;
 
    private Description description;
 
+   @Enumerated(EnumType.STRING)
    private State state;
 
    //for jpa

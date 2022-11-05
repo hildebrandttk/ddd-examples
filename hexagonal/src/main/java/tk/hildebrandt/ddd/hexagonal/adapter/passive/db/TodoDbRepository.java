@@ -3,9 +3,9 @@ package tk.hildebrandt.ddd.hexagonal.adapter.passive.db;
 import java.util.List;
 import java.util.Optional;
 
-import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
 
-import static javax.transaction.Transactional.TxType.REQUIRED;
+import static jakarta.transaction.Transactional.TxType.REQUIRED;
 
 import org.springframework.stereotype.Component;
 

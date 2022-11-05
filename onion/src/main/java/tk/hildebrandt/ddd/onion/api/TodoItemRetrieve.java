@@ -2,7 +2,7 @@ package tk.hildebrandt.ddd.onion.api;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
 
 import tk.hildebrandt.ddd.onion.core.TodoItem;
 

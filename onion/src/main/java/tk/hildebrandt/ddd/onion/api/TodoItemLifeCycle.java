@@ -2,7 +2,7 @@ package tk.hildebrandt.ddd.onion.api;
 
 import java.util.Optional;
 
-import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
 
 import tk.hildebrandt.ddd.onion.core.FinishCommand;
 import tk.hildebrandt.ddd.onion.core.StartProcessCommand;

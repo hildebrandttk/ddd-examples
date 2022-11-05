@@ -2,7 +2,7 @@ package tk.hildebrandt.ddd.hexagonal.port.active;
 
 import java.util.Optional;
 
-import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
 
 import tk.hildebrandt.ddd.hexagonal.domain.TodoItem;
 import tk.hildebrandt.ddd.hexagonal.service.FinishCommand;
