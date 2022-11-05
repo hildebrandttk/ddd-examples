@@ -1,10 +1,11 @@
 plugins {
    id 'application'
-   id 'org.springframework.boot' version '2.7.5' apply false
+   id 'org.springframework.boot' version '3.0.0-RC1' apply false
 }
 
 repositories {
    mavenCentral()
+   maven { url 'https://repo.spring.io/milestone' }
 }
 
 dependencies {
@@ -35,7 +36,7 @@ configurations.all {
 }
 
 application {
-   mainClass = 'tk.hildebrandt.ddd.hexagonal.TodoApp'
+   mainClass = 'tk.hildebrandt.ddd.plain.TodoApp'
 }
 
 tasks.named('test') {
