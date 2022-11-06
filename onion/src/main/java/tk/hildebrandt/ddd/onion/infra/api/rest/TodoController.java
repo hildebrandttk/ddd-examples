@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
+import tk.hildebrandt.ddd.common.validation.Uuid;
 import tk.hildebrandt.ddd.onion.api.TodoItemLifeCycle;
 import tk.hildebrandt.ddd.onion.api.TodoItemRetrieve;
 import tk.hildebrandt.ddd.onion.core.FinishCommand;
 import tk.hildebrandt.ddd.onion.core.StartProcessCommand;
 import tk.hildebrandt.ddd.onion.core.TodoItem;
 import tk.hildebrandt.ddd.onion.core.TodoService;
-import tk.hildebrandt.ddd.onion.infra.validation.Uuid;
 
 @RestController
 public class TodoController {

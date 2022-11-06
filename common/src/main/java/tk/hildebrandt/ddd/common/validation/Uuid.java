@@ -1,7 +1,8 @@
-package tk.hildebrandt.ddd.modulith.validation;
+package tk.hildebrandt.ddd.common.validation;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
+
 import static java.lang.annotation.ElementType.CONSTRUCTOR;
 import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.ElementType.PARAMETER;

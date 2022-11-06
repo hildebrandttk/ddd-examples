@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
+import tk.hildebrandt.ddd.common.validation.Uuid;
 import tk.hildebrandt.ddd.modulith.todo.FinishCommand;
 import tk.hildebrandt.ddd.modulith.todo.StartProcessCommand;
 import tk.hildebrandt.ddd.modulith.todo.TodoItem;
 import tk.hildebrandt.ddd.modulith.todo.TodoService;
-import tk.hildebrandt.ddd.modulith.validation.Uuid;
 
 @RestController
 public class TodoController {

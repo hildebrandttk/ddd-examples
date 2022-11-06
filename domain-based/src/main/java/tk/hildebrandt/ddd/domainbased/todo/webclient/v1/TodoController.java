@@ -14,7 +14,7 @@ import tk.hildebrandt.ddd.domainbased.todo.FinishCommand;
 import tk.hildebrandt.ddd.domainbased.todo.StartProcessCommand;
 import tk.hildebrandt.ddd.domainbased.todo.TodoItem;
 import tk.hildebrandt.ddd.domainbased.todo.TodoService;
-import tk.hildebrandt.ddd.domainbased.validation.Uuid;
+import tk.hildebrandt.ddd.common.validation.Uuid;
 
 @RestController
 public class TodoController {
