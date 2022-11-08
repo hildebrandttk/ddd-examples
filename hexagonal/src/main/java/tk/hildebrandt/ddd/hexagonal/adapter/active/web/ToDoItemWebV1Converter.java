@@ -5,9 +5,6 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
-import tk.hildebrandt.ddd.hexagonal.domain.Description;
-import tk.hildebrandt.ddd.hexagonal.domain.State;
-import tk.hildebrandt.ddd.hexagonal.domain.TodoItemId;
 import tk.hildebrandt.ddd.hexagonal.service.TodoItemDto;
 
 @Component

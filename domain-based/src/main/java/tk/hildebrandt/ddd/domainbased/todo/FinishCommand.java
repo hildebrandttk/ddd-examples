@@ -4,7 +4,6 @@ public class FinishCommand {
    private final TodoItemId todoItemId;
 
    private FinishCommand(TodoItemId todoItemId) {
-
       this.todoItemId = todoItemId;
    }
 

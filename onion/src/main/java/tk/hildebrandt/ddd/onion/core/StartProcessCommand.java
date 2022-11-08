@@ -4,7 +4,6 @@ public class StartProcessCommand {
    private final TodoItemId todoItemId;
 
    private StartProcessCommand(TodoItemId todoItemId) {
-
       this.todoItemId = todoItemId;
    }
 

@@ -4,7 +4,6 @@ import java.util.Optional;
 
 import jakarta.transaction.Transactional;
 
-import tk.hildebrandt.ddd.hexagonal.domain.TodoItem;
 import tk.hildebrandt.ddd.hexagonal.service.FinishCommand;
 import tk.hildebrandt.ddd.hexagonal.service.StartProcessCommand;
 import tk.hildebrandt.ddd.hexagonal.service.TodoItemDto;

@@ -17,6 +17,8 @@ public class TodoItem {
    @Enumerated(EnumType.STRING)
    private State state;
 
+   private DueDate dueDate;
+
    //for jpa
    protected TodoItem() {
    }

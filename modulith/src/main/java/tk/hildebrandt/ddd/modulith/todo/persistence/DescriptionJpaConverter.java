@@ -8,7 +8,7 @@ import tk.hildebrandt.ddd.modulith.todo.Description;
 public class DescriptionJpaConverter implements AttributeConverter<Description, String> {
    @Override
    public String convertToDatabaseColumn(Description domainData) {
-      return domainData.getValue();
+      return domainData.value();
    }
 
    @Override

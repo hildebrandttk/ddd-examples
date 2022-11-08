@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import tk.hildebrandt.ddd.hexagonal.domain.State;
-import tk.hildebrandt.ddd.hexagonal.domain.TodoItemId;
 import tk.hildebrandt.ddd.hexagonal.service.TodoItemDto;
 
 class ToDoItemV1ConverterTest {

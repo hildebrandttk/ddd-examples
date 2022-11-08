@@ -24,7 +24,7 @@ public class WebHookController {
    }
 
    @PutMapping(path = "/user/crm/webhook/v1/{userId}", produces = APPLICATION_JSON_VALUE, consumes = {APPLICATION_JSON_VALUE})
-   public ResponseEntity updateUser(@Uuid @PathVariable("userId") String userId, @RequestBody UserRequestParam userUpdateRequestParam) {
+   public ResponseEntity<?> updateUser(@Uuid @PathVariable("userId") String userId, @RequestBody UserRequestParam userUpdateRequestParam) {
       userService.update(converter.toUpdateCommand(userId, userUpdateRequestParam));
 
       return ResponseEntity.ok()
@@ -32,7 +32,7 @@ public class WebHookController {
    }
 
    @DeleteMapping(path = "/user/crm/webhook/v1/{userId}")
-   public ResponseEntity deleteUser(@Uuid @PathVariable("userId") String userId) {
+   public ResponseEntity<?> deleteUser(@Uuid @PathVariable("userId") String userId) {
       userService.delete(converter.toDeleteCommand(userId));
 
       return ResponseEntity.ok()

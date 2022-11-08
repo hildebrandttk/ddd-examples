@@ -9,7 +9,7 @@ import tk.hildebrandt.ddd.onion.infra.jpa.TodoJpaRepository;
 @Component
 public class TodoTestdataService {
 
-   private TodoJpaRepository todoRepository;
+   private final TodoJpaRepository todoRepository;
 
    public TodoTestdataService(TodoJpaRepository todoRepository) {
       this.todoRepository = todoRepository;

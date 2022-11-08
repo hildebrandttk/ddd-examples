@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class TodoItemListResponseDto {
 
-   private List<TodoItemDto> items;
+   private final List<TodoItemDto> items;
 
    TodoItemListResponseDto(List<TodoItemDto> items) {
       this.items = items;

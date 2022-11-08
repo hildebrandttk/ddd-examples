@@ -2,8 +2,6 @@ package tk.hildebrandt.ddd.hexagonal.service;
 
 import java.util.UUID;
 
-import tk.hildebrandt.ddd.hexagonal.domain.TodoItemId;
-
 public class FinishCommand {
    private final UUID todoItemId;
 

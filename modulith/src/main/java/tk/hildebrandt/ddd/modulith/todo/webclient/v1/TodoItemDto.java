@@ -7,7 +7,6 @@ public class TodoItemDto {
 
    private final String todoItemId;
    private final String state;
-
    private final String description;
 
    TodoItemDto(String todoItemId, String state, String description) {

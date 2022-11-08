@@ -2,11 +2,6 @@ package tk.hildebrandt.ddd.hexagonal.domain;
 
 import java.util.Objects;
 
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-
 public class TodoItem {
    private TodoItemId todoItemId;
 

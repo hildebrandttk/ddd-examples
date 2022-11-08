@@ -32,7 +32,7 @@ class TodoDbRepositoryIT {
 
    @Test
    void shouldPersistDomainObject(){
-      TodoItem itemToPersist = new TodoItem(new TodoItemId(), new Description("shouldPersistDomainObject"), State.OPEN);
+      TodoItem itemToPersist = new TodoItem(new TodoItemId(), new Description("shouldPersistDomainObject"), State.OPEN, dueDate);
       TodoItem persistedItem = transactionTemplate.execute(status -> dbRepository.persist(itemToPersist));
       assertThat(persistedItem).isNotNull();
    }

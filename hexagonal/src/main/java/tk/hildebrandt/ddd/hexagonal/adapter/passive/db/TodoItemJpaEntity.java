@@ -7,10 +7,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
-import tk.hildebrandt.ddd.hexagonal.domain.Description;
-import tk.hildebrandt.ddd.hexagonal.domain.State;
-import tk.hildebrandt.ddd.hexagonal.domain.TodoItemId;
-
 @Entity
 public class TodoItemJpaEntity {
    @Id

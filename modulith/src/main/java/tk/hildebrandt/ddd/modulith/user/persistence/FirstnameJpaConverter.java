@@ -8,7 +8,7 @@ import tk.hildebrandt.ddd.modulith.user.Firstname;
 public class FirstnameJpaConverter implements AttributeConverter<Firstname, String> {
    @Override
    public String convertToDatabaseColumn(Firstname domainData) {
-      return domainData.getValue();
+      return domainData.value();
    }
 
    @Override

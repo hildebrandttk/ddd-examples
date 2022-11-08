@@ -46,7 +46,7 @@ public class ToDoItemV1Converter {
       if (description == null) {
          return null;
       }
-      return description.getValue();
+      return description.value();
    }
 
    TodoItemId toId(String todoItemId) {

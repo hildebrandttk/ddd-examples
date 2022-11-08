@@ -1,7 +1,6 @@
 package tk.hildebrandt.ddd.onion.infra.api.rest;
 
 import java.util.UUID;
-
 import static java.util.Arrays.asList;
 
 import org.assertj.core.api.Assertions;
@@ -12,9 +11,6 @@ import tk.hildebrandt.ddd.onion.core.Description;
 import tk.hildebrandt.ddd.onion.core.State;
 import tk.hildebrandt.ddd.onion.core.TodoItem;
 import tk.hildebrandt.ddd.onion.core.TodoItemId;
-import tk.hildebrandt.ddd.onion.infra.api.rest.ToDoItemV1Converter;
-import tk.hildebrandt.ddd.onion.infra.api.rest.TodoItemDto;
-import tk.hildebrandt.ddd.onion.infra.api.rest.TodoItemListResponseDto;
 
 class ToDoItemV1ConverterTest {
 
