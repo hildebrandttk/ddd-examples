@@ -3,14 +3,14 @@ package tk.hildebrandt.ddd.modulith.todo;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import jakarta.transaction.Transactional;
 
-@Component
+@Service
 public class TodoService {
 
-   private TodoRepository todoRepository;
+   private final TodoRepository todoRepository;
 
    public TodoService(TodoRepository todoRepository) {
       this.todoRepository = todoRepository;

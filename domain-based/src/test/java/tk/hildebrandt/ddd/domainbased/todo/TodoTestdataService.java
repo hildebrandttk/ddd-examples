@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class TodoTestdataService {
 
-   private TodoRepository todoRepository;
+   private final TodoRepository todoRepository;
 
    public TodoTestdataService(TodoRepository todoRepository) {
       this.todoRepository = todoRepository;
@@ -18,7 +18,6 @@ public class TodoTestdataService {
       return createOpenTodoItem(new TodoItemId());
    }
 
-   @Transactional
    public TodoItem createOpenTodoItem(TodoItemId todoItemId) {
       return todoRepository.save(new TodoItem(todoItemId, new Description("Test"), State.OPEN));
    }

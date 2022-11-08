@@ -6,11 +6,12 @@ import java.util.Optional;
 import jakarta.transaction.Transactional;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class TodoService {
 
-   private TodoRepository todoRepository;
+   private final TodoRepository todoRepository;
 
    public TodoService(TodoRepository todoRepository) {
       this.todoRepository = todoRepository;
