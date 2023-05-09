@@ -28,11 +28,11 @@ public class TodoTestdataService {
    @Transactional
    public TodoItem createOpenTodoItem(UUID todoItemId) {
       TodoItemJpaEntity jpaEntity = todoRepository.save(new TodoItemJpaEntity(todoItemId, "Test", State.OPEN.name()));
-      return new TodoItem(new TodoItemId(jpaEntity.getTodoItemId()), new Description(jpaEntity.getDescription()), State.valueOf(jpaEntity.getState()), dueDate);
+      return new TodoItem(new TodoItemId(jpaEntity.getTodoItemId()), new Description(jpaEntity.getDescription()), State.valueOf(jpaEntity.getState()));
    }
    @Transactional
    public TodoItem createOpenTodoItem(TodoItemId todoItemId) {
       TodoItemJpaEntity jpaEntity = todoRepository.save(new TodoItemJpaEntity(todoItemId.getId(), "Test", State.OPEN.name()));
-      return new TodoItem(new TodoItemId(jpaEntity.getTodoItemId()), new Description(jpaEntity.getDescription()), State.valueOf(jpaEntity.getState()), dueDate);
+      return new TodoItem(new TodoItemId(jpaEntity.getTodoItemId()), new Description(jpaEntity.getDescription()), State.valueOf(jpaEntity.getState()));
    }
 }
