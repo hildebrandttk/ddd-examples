@@ -49,6 +49,10 @@ public class TodoItem {
       return state;
    }
 
+   public DueDate getDueDate() {
+      return dueDate;
+   }
+
    @Override
    public boolean equals(Object o) {
       if (this == o) return true;
